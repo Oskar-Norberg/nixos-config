@@ -8,13 +8,17 @@
   # TODO: Font rendering fixes
   # TODO: Steam
   # TODO: Gaming Optimization
-  # TODO: Nvidia Drivers
   imports =
     [
+      ./system/helpers/unfree.nix
+
       ./system/hardware-configuration.nix
       ./system/pipewire.nix
       ./system/display-manager.nix
       ./system/kde.nix
+
+      ./system/nvidia.nix
+      ./system/gaming.nix
     ];
 
   boot.loader = {
