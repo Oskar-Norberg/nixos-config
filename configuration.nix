@@ -16,6 +16,7 @@
       ./system/kde.nix
 
       ./system/nvidia.nix
+      ./system/nvidia-tuner.nix
       ./system/gaming.nix
     ];
 
