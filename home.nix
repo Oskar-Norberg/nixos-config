@@ -16,6 +16,7 @@
     ./home/editors.nix
     ./home/browser.nix
 
+    ./home/games.nix
     ./home/discord.nix
     # ./home/spotify.nix # TODO: Only in unstable rn
 
