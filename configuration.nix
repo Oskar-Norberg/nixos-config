@@ -5,10 +5,9 @@
 { config, pkgs, ... }:
 
 {
-  # TODO: Font rendering fixes
   imports =
     [
-      ./system/helpers/unfree.nix
+      ./helpers/unfree.nix
 
       ./system/hardware-configuration.nix
       ./system/pipewire.nix
