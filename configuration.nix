@@ -6,8 +6,6 @@
 
 {
   # TODO: Font rendering fixes
-  # TODO: Steam
-  # TODO: Gaming Optimization
   imports =
     [
       ./system/helpers/unfree.nix
@@ -31,6 +29,7 @@
       enable = true;
       device = "nodev";
       efiSupport = true;
+      useOSProber = true;
     };
   };
 
