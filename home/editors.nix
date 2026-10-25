@@ -8,4 +8,6 @@
   home.sessionVariables = {
     EDITOR="nvim";
   };
+
+  programs.vscodium.enable = true;
 }

@@ -5,6 +5,7 @@
 { config, pkgs, ... }:
 
 {
+  # TODO: Font rendering fixes
   # TODO: Steam
   # TODO: Gaming Optimization
   # TODO: Nvidia Drivers
