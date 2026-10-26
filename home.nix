@@ -19,7 +19,7 @@
 
     ./home/games.nix
     ./home/discord.nix
-    # ./home/spotify.nix
+    ./home/spotify.nix
 
     ./home/testing.nix
   ];

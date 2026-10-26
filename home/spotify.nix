@@ -1,7 +1,7 @@
-{config, pkgs, ...}:
+{config, pkgs-unstable, ...}:
 
 {
-  home.packages = with pkgs; [
+  home.packages = with pkgs-unstable; [
     spotifast
   ];
 }
