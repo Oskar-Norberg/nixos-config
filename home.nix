@@ -18,6 +18,7 @@
     ./home/browser.nix
 
     ./home/games.nix
+    ./home/dxvk.nix
     ./home/discord.nix
     ./home/spotify.nix
 
