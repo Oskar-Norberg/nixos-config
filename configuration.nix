@@ -10,6 +10,7 @@
       ./helpers/unfree.nix
 
       ./system/hardware-configuration.nix
+      ./system/memory.nix
       ./system/pipewire.nix
       ./system/display-manager.nix
       ./system/kde.nix
@@ -17,6 +18,7 @@
       ./system/nvidia.nix
       ./system/nvidia-tuner.nix
       ./system/gaming.nix
+      ./system/performance.nix
     ];
 
   boot.loader = {
@@ -30,6 +32,7 @@
       device = "nodev";
       efiSupport = true;
       useOSProber = true;
+      configurationLimit = 3;
     };
   };
 
