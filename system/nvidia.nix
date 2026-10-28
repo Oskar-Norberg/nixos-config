@@ -14,8 +14,9 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
+    
     # Set to false if gpu fails to wake from sleep
-    # powerManagement.enable = false;
+    powerManagement.enable = true;
 
     open = true;
 

@@ -9,6 +9,8 @@
     [
       ./helpers/unfree.nix
 
+      ./system/utilities.nix
+
       ./system/hardware-configuration.nix
       ./system/memory.nix
       ./system/pipewire.nix
