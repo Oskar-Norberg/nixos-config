@@ -11,6 +11,8 @@
 
     ./home/audio.nix
     ./home/video.nix
+  
+    ./home/desktop.nix
 
     ./home/sh.nix
     ./home/git.nix
@@ -24,7 +26,6 @@
 
     ./home/testing.nix
   ];
-
 
   programs.home-manager.enable = true;
 }

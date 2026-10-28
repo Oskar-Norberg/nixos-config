@@ -14,8 +14,7 @@
       ./system/hardware-configuration.nix
       ./system/memory.nix
       ./system/pipewire.nix
-      ./system/display-manager.nix
-      ./system/kde.nix
+      ./system/desktop.nix
 
       ./system/nvidia.nix
       ./system/nvidia-tuner.nix
@@ -27,14 +26,14 @@
     systemd-boot.enable = false;
     efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
+      efiSysMountPoint = "/boot/efi";
     };
     grub = {
       enable = true;
       device = "nodev";
       efiSupport = true;
       useOSProber = true;
-      configurationLimit = 3;
+      configurationLimit = 6;
     };
   };
 
