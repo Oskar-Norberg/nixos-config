@@ -14,6 +14,11 @@ in
     force = true;
   };
 
+  home.file.".local/state/noctalia/settings.toml" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/configs/noctalia/settings.toml";
+    force = true;
+  };
+
   programs.ghostty = {
     enable = true;
     # TODO: Could be integrated with the shell helper in system. But honestly not needed
@@ -23,4 +28,13 @@ in
   home.packages = with pkgs; [
     kdePackages.dolphin
   ];
+
+  home.pointerCursor = {
+    package = pkgs.nordzy-cursor-theme;
+    name = "Nordzy-cursors";
+    size = 24;
+    gtk.enable = true;
+    x11.enable = true;
+    hyprcursor.enable = true;
+  };
 }

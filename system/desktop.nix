@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  config.specialisation.hyprland.configuration.my.desktop = "hyprland";
+  config.specialisation.kde.configuration.my.desktop = "kde";
 
   imports = [
     ./desktops/kde.nix
@@ -10,6 +10,6 @@
 
   options.my.desktop = lib.mkOption {
     type = lib.types.enum [ "hyprland" "kde" ];
-    default = "kde";
+    default = "hyprland";
   };
 }

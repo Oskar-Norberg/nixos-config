@@ -12,6 +12,8 @@
     ./home/audio.nix
     ./home/video.nix
   
+    ./home/backgrounds.nix
+
     ./home/desktop.nix
 
     ./home/sh.nix

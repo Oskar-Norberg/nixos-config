@@ -27,6 +27,13 @@ hl.monitor({
     scale    = "auto",
 })
 
+-- I hate this override, but i have to
+hl.monitor({
+    output   = "DP-3",
+    mode     = "highrr",
+    position = "auto",
+    scale    = "auto",
+})
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -37,7 +44,7 @@ local terminal    = "ghostty"
 local fileManager = "dolphin"
 local discord     = "vesktop"
 local browser     = "librewolf"
-local editor      = "vscodium"
+local editor      = "codium"
 
 -------------------
 ---- AUTOSTART ----
@@ -55,7 +62,6 @@ local editor      = "vscodium"
 -- end)
 
 hl.on("hyprland.start", function () 
-  hl.exec_cmd("noctalia")
 end)
 
 
@@ -67,7 +73,6 @@ end)
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
-
 
 -----------------------
 ----- PERMISSIONS -----
@@ -288,6 +293,7 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("uwsm stop"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(ipc .. "session lock"))
 
 --- Window Properties
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
@@ -312,6 +318,9 @@ hl.bind(mainMod .. " + ALT + right", hl.dsp.window.resize({ x = 50,  y = 0,   re
 hl.bind(mainMod .. " + ALT + left",  hl.dsp.window.resize({ x = -50, y = 0,   relative = true }))
 hl.bind(mainMod .. " + ALT + down",  hl.dsp.window.resize({ x = 0,   y = 50,  relative = true }))
 hl.bind(mainMod .. " + ALT + up",    hl.dsp.window.resize({ x = 0,   y = -50, relative = true }))
+
+hl.bind(mainMod .. " + CONTROL + ALT + left",  hl.dsp.workspace.swap_monitors({ monitor1 = "current", monitor2 = "l" }))
+hl.bind(mainMod .. " + CONTROL + ALT + right", hl.dsp.workspace.swap_monitors({ monitor1 = "current", monitor2 = "r" }))
 
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 
