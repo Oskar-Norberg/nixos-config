@@ -18,15 +18,9 @@ in
     enable = true;
     # TODO: Could be integrated with the shell helper in system. But honestly not needed
     enableZshIntegration = true;
-    # TODO: Config block
-  };
-
-  services.hyprlauncher = {
-    enable = true;
   };
 
   home.packages = with pkgs; [
     kdePackages.dolphin
-    wayle
   ];
 }

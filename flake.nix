@@ -9,10 +9,24 @@
 		nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 		home-manager.url = "github:nix-community/home-manager/release-26.05";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+		noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+		noctalia-greeter = {
+			url = "github:noctalia-dev/noctalia-greeter";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+	};
+
+	nixConfig = {
+		extra-substituters = [ "https://noctalia.cachix.org" ];
+		extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
 	};
 	
 	# TODO: Temporary spotifast override
-	outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-spotifast, home-manager, ...}:
+	outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-spotifast, home-manager, noctalia, noctalia-greeter, ...}:
 	let
 		system = "x86_64-linux";
 		lib = nixpkgs.lib;
@@ -35,6 +49,8 @@
 				modules = [ ./configuration.nix ];
 				specialArgs = {
 					inherit pkgs-unstable;
+					inherit noctalia;
+					inherit noctalia-greeter;
 				};
 			};
 		};
@@ -44,6 +60,8 @@
 				modules = [ ./home.nix ];
 				extraSpecialArgs = {
 					inherit pkgs-unstable;
+					inherit noctalia;
+					inherit noctalia-greeter;
 				};
 			};
 		};
