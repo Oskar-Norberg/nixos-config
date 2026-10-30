@@ -1,7 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
-  config.specialisation.kde.configuration.my.desktop = "kde";
+  config = {
+    specialisation.kde.configuration.my.desktop = "kde";
+    services.gnome.gnome-keyring.enable = true;
+  };
 
   imports = [
     ./desktops/kde.nix
