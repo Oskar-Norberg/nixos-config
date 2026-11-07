@@ -5,7 +5,7 @@ let
 in
 {
   xdg.configFile."hypr" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/configs/hyprland";
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/configs/noctalia/hyprland";
     force = true;
   };
 
@@ -15,7 +15,7 @@ in
   };
 
   home.file.".local/state/noctalia/settings.toml" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/configs/noctalia/settings.toml";
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/configs/noctalia/config/settings.toml";
     force = true;
   };
 

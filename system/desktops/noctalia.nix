@@ -6,7 +6,7 @@
     noctalia-greeter.nixosModules.default 
   ];
 
-  config = lib.mkIf (config.my.desktop == "hyprland") {
+  config = lib.mkIf (config.my.desktop == "noctalia") {
     # TODO: Theming/Config
     # TODO: passwordlessSyncUsers
     # Greeter
@@ -14,7 +14,6 @@
       enable = true;
     };
 
-    # TODO: Config
     programs.noctalia = {
       enable = true;
       systemd.enable = true;

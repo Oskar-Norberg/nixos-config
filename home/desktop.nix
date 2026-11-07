@@ -3,6 +3,6 @@
 {
   imports = [
     ./desktops/kde.nix
-    ./desktops/hyprland.nix
+    ./desktops/noctalia.nix
   ];
 }

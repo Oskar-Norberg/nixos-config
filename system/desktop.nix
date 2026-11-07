@@ -8,11 +8,11 @@
 
   imports = [
     ./desktops/kde.nix
-    ./desktops/hyprland.nix
+    ./desktops/noctalia.nix
   ];
 
   options.my.desktop = lib.mkOption {
-    type = lib.types.enum [ "hyprland" "kde" ];
-    default = "hyprland";
+    type = lib.types.enum [ "noctalia" "kde" ];
+    default = "noctalia";
   };
 }
