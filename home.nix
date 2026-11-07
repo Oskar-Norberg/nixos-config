@@ -26,7 +26,7 @@
     ./home/discord.nix
     ./home/spotify.nix
 
-    ./home/testing.nix
+    ./home/miscellaneous.nix
   ];
 
   programs.home-manager.enable = true;

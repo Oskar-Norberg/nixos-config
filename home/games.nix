@@ -9,6 +9,7 @@
 
   home.packages = with pkgs; [
     xivlauncher
+    deadlock-mod-manager
   ];
 
   programs.prismlauncher = {
