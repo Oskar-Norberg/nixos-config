@@ -171,9 +171,10 @@ settings_window_translucent = true
 
 [theme]
 builtin = "Noctalia"
-community_palette = "Dysfunctional"
+community_palette = "ADW"
 mode = "dark"
 source = "wallpaper"
+wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "hyprland" ]

@@ -28,7 +28,7 @@ hl.bind(conf.mainMod .. " + SHIFT + s", hl.dsp.exec_cmd(conf.ipc .. "screenshot-
 
 --- Open Default Programs
 hl.bind(conf.mainMod .. " + T", hl.dsp.exec_cmd(conf.terminal))
-hl.bind(conf.mainMod .. " + E", hl.dsp.exec_cmd(conf.fileManager))
+hl.bind(conf.mainMod .. " + E", hl.dsp.exec_cmd(conf.TEMPORARY_FILEMANAGER_COMMAND))
 hl.bind(conf.mainMod .. " + D", hl.dsp.exec_cmd(conf.discord))
 hl.bind(conf.mainMod .. " + I", hl.dsp.exec_cmd(conf.editor))
 hl.bind(conf.mainMod .. " + B", hl.dsp.exec_cmd(conf.browser))
