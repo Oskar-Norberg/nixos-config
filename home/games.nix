@@ -12,13 +12,17 @@
     deadlock-mod-manager
   ];
 
-  programs.prismlauncher = {
+    programs.prismlauncher = {
     enable = true;
     package = pkgs.prismlauncher.override {
       jdks = with pkgs; [
         temurin-bin-8
         temurin-bin-17
         temurin-bin-21
+        temurin-bin-25
+      ];
+      additionalLibs = with pkgs; [
+        libxkbcommon
       ];
     };
   };
