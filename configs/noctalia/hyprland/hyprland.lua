@@ -7,6 +7,5 @@ require("modules.windowing")
 hl.on("hyprland.start", function () 
 end)
 
-
 -- For Noctalia Color templates
 require("noctalia").apply_theme()

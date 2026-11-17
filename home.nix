@@ -26,7 +26,12 @@
     ./home/discord.nix
     ./home/spotify.nix
 
-    ./home/miscellaneous.nix
+    ./home/wine.nix
+
+    ./home/photography.nix
+
+    ./home/networking.nix
+    ./home/backups.nix
   ];
 
   programs.home-manager.enable = true;
