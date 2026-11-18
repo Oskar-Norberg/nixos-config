@@ -1,10 +1,9 @@
 return {
-    terminal    = "ghostty",
-    fileManager = "yazi",
+    terminal    = "kitty",
+    fileManager = "kitty -e yazi",
     discord     = "vesktop",
     browser     = "librewolf",
     editor      = "codium",
-    TEMPORARY_FILEMANAGER_COMMAND = "kitty -e yazi",
 
     mainMod = "SUPER",
     ipc     = "noctalia msg ",

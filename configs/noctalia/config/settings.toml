@@ -170,14 +170,12 @@ settings_window_translucent = true
     transparency_mode = "soft"
 
 [theme]
-builtin = "Noctalia"
+builtin = "Nord"
 community_palette = "ADW"
 mode = "dark"
-source = "wallpaper"
-wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "hyprland" ]
+    builtin_ids = [ "hyprland", "kitty" ]
     community_ids = [ "discord", "lazygit", "ghostty" ]
     enable_builtin_templates = true
 

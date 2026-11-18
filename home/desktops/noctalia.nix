@@ -9,33 +9,41 @@ in
     force = true;
   };
 
-  xdg.configFile."ghostty" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/configs/ghostty";
-    force = true;
-  };
+  xdg.configFile."kitty/custom.conf".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/configs/kitty/custom.conf";
 
   home.file.".local/state/noctalia/settings.toml" = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/configs/noctalia/config/settings.toml";
     force = true;
   };
 
-  programs = {
-    ghostty = {
-      enable = true;
-      # TODO: Could be integrated with the shell helper in system. But honestly not needed
-      enableZshIntegration = true;
-      package = pkgs-unstable.ghostty;
-    };
+  fonts.fontconfig.enable = true;
 
+  programs = {
     imv.enable = true;
+
     yazi = {
       enable = true;
       package = pkgs-unstable.yazi;
     };
-    # TODO: Disable once ghostty gets dnd support. Or switch to kitty fulltime
+
     kitty = {
       enable = true;
       package = pkgs-unstable.kitty;
+
+      # TODO: Could be integrated with the shell helper in system. But honestly not needed
+      shellIntegration.enableZshIntegration = true;
+
+      font = {
+        name = "JetBrainsMono Nerd Font";
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        size = 10;
+      };
+
+      extraConfig = "
+        include custom.conf 
+        include themes/noctalia.conf
+      ";
     };
   };
 
