@@ -26,7 +26,7 @@
     ./home/discord.nix
     ./home/spotify.nix
 
-    ./home/wine.nix
+    ./home/bottles.nix
 
     ./home/photography.nix
 

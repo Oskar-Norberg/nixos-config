@@ -20,6 +20,8 @@
       ./system/nvidia-tuner.nix
       ./system/gaming.nix
       ./system/performance.nix
+
+      ./system/flatpak.nix
     ];
 
   boot.loader = {

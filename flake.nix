@@ -4,8 +4,11 @@
 	inputs = {
 		nixpkgs.url = "nixpkgs/nixos-26.05";
 		nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+
 		home-manager.url = "github:nix-community/home-manager/release-26.05";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+		nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
 		noctalia = {
       url = "github:noctalia-dev/noctalia";
@@ -22,7 +25,16 @@
 		extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
 	};
 	
-	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, noctalia, noctalia-greeter, ...}:
+	outputs = { 
+		self, 
+		nixpkgs, 
+		nixpkgs-unstable, 
+		nix-flatpak, 
+		home-manager, 
+		noctalia, 
+		noctalia-greeter, 
+		...
+	} :
 	let
 		system = "x86_64-linux";
 		lib = nixpkgs.lib;
@@ -32,7 +44,10 @@
 		nixosConfigurations = {
 			nixos = lib.nixosSystem {
 				inherit system;
-				modules = [ ./configuration.nix ];
+				modules = [ 
+					nix-flatpak.nixosModules.nix-flatpak
+					./configuration.nix 
+				];
 				specialArgs = {
 					inherit pkgs-unstable;
 					inherit noctalia;
@@ -43,7 +58,10 @@
 		homeConfigurations = {
 			ringo = home-manager.lib.homeManagerConfiguration {
 				inherit pkgs;
-				modules = [ ./home.nix ];
+				modules = [ 
+					nix-flatpak.homeManagerModules.nix-flatpak
+					./home.nix 
+				];
 				extraSpecialArgs = {
 					inherit pkgs-unstable;
 					inherit noctalia;
