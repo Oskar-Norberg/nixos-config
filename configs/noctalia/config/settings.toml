@@ -23,11 +23,11 @@ widget_order = [
     [desktop_widgets.widget.desktop-widget-0000000000000001]
     box_height = 0.0
     box_width = 0.0
-    cx = 960.0
-    cy = 177.0
+    cx = 540.0
+    cy = 314.66665649414062
     output = "DP-2"
-    placement_height = 1080.0
-    placement_width = 1920.0
+    placement_height = 1920.0
+    placement_width = 1080.0
     rotation = 0.0
     type = "clock"
 
@@ -97,11 +97,11 @@ widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-3" ]
     [lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
     box_height = 196.0
     box_width = 810.0
-    cx = 960.0
-    cy = 898.00006103515625
+    cx = 540.0
+    cy = 1596.444580078125
     output = "DP-2"
-    placement_height = 1080.0
-    placement_width = 1920.0
+    placement_height = 1920.0
+    placement_width = 1080.0
     rotation = 0.0
     type = "login_box"
 
@@ -173,6 +173,7 @@ settings_window_translucent = true
 builtin = "Nord"
 community_palette = "ADW"
 mode = "dark"
+source = "builtin"
 
     [theme.templates]
     builtin_ids = [ "hyprland", "kitty" ]

@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     fastfetch
     btop
+    nvitop
   ];
   
   services = {

@@ -12,6 +12,7 @@
       ./system/utilities.nix
 
       ./system/hardware-configuration.nix
+      ./system/bluetooth.nix
       ./system/memory.nix
       ./system/pipewire.nix
       ./system/desktop.nix
