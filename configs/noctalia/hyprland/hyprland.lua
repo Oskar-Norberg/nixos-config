@@ -1,4 +1,5 @@
 require("modules.display")
+require("modules.input")
 require("modules.keybinds")
 require("modules.looknfeel")
 require("modules.windowing")

@@ -9,6 +9,8 @@
   imports = [
     ./helpers/unfree.nix
 
+    # ./home/utilities.nix
+
     ./home/audio.nix
     ./home/video.nix
   

@@ -14,6 +14,7 @@
       ./system/hardware-configuration.nix
       ./system/bluetooth.nix
       ./system/memory.nix
+      ./system/generic-linux.nix
       ./system/pipewire.nix
       ./system/desktop.nix
 
@@ -84,6 +85,14 @@
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
+
+  # Garbage Collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+  nix.settings.auto-optimise-store = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
