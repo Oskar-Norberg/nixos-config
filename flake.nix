@@ -10,6 +10,8 @@
 
 		nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
+		nixvim.url = "github:nix-community/nixvim-26.05";
+
 		noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,6 +33,7 @@
 		nixpkgs-unstable, 
 		nix-flatpak, 
 		home-manager, 
+		nixvim,
 		noctalia, 
 		noctalia-greeter, 
 		...
@@ -52,6 +55,7 @@
 					inherit pkgs-unstable;
 					inherit noctalia;
 					inherit noctalia-greeter;
+					inherit nixvim;
 				};
 			};
 		};
@@ -66,6 +70,7 @@
 					inherit pkgs-unstable;
 					inherit noctalia;
 					inherit noctalia-greeter;
+					inherit nixvim;
 				};
 			};
 		};

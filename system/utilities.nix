@@ -5,6 +5,8 @@
     fastfetch
     btop
     nvitop
+    unzip
+    ripgrep
   ];
   
   services = {

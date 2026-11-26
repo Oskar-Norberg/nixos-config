@@ -1,12 +1,22 @@
 {config, pkgs, ...}:
 
+let
+  dotfiles = "${config.home.homeDirectory}/.dotfiles";
+in
 {
-  home.packages = with pkgs; [
-    neovim
-  ];
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    initLua = ''
+      require("main")
+    '';
+  };
 
-  home.sessionVariables = {
-    EDITOR="nvim";
+  xdg.configFile."nvim/lua" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/configs/neovim/lua";
+    force = true;
   };
 
   programs.vscodium.enable = true;
