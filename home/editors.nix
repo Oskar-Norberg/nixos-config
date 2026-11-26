@@ -29,6 +29,7 @@
       gitsigns.enable = true;
       dashboard.enable = true;
       tiny-inline-diagnostic.enable = true;
+      yazi.enable = true;
 
       mini-tabline.enable = true;
 
@@ -130,6 +131,14 @@
         options = {
           desc = "LazyGit";
           silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>-";
+        action = "<cmd>Yazi<CR>";
+        options = {
+          desc = "Open Yazi at current file";
         };
       }
     ];
