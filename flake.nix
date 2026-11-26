@@ -10,23 +10,16 @@
 
 		nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
-		nixvim.url = "github:nix-community/nixvim-26.05";
+		nixvim.url = "github:nix-community/nixvim/nixos-26.05";
 
 		noctalia = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:noctalia-dev/noctalia/cachix";
     };
 		noctalia-greeter = {
-			url = "github:noctalia-dev/noctalia-greeter";
-			inputs.nixpkgs.follows = "nixpkgs";
+			url = "github:noctalia-dev/noctalia-greeter/cachix";
 		};
 	};
 
-	nixConfig = {
-		extra-substituters = [ "https://noctalia.cachix.org" ];
-		extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
-	};
-	
 	outputs = { 
 		self, 
 		nixpkgs, 

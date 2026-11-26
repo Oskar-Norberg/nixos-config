@@ -87,12 +87,24 @@
   programs.zsh.enable = true;
 
   # Garbage Collection
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+    
+    settings = {
+      auto-optimise-store = true;
+      
+      # Noctalia Cache
+      extra-substituters = [ "https://noctalia.cachix.org" ];
+      extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
+      
+      experimental-features = [ "nix-command" "flakes" ];
+    };
   };
-  nix.settings.auto-optimise-store = true;
+  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -111,6 +123,4 @@
   # networking.firewall.enable = false;
 
   system.stateVersion = "26.05"; # Don't change (probably)
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
