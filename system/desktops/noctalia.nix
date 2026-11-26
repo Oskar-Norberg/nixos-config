@@ -7,7 +7,6 @@
   ];
 
   config = lib.mkIf (config.my.desktop == "noctalia") {
-    # TODO: Theming/Config
     # TODO: passwordlessSyncUsers
     # Greeter
     services.displayManager.noctalia-greeter = {

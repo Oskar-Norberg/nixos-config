@@ -7,6 +7,7 @@
     nvitop
     unzip
     ripgrep
+    fd
   ];
   
   services = {
